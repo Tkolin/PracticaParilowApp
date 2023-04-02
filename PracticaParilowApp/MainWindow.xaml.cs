@@ -23,7 +23,7 @@ namespace PracticaParilowApp
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = this;
+            MainFrame.Content = new LoginPage();
         }
     }
 }

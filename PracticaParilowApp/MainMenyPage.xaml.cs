@@ -20,9 +20,44 @@ namespace PracticaParilowApp
     /// </summary>
     public partial class MainMenyPage : Page
     {
-        public MainMenyPage()
+        public Users users;
+        public MainMenyPage(Users user)
         {
             InitializeComponent();
+            this.users = user;
+        }
+
+        private void btnApplications_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ApplicationPage(users));
+        }
+
+        private void btnClients_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ApplicationPage(users));
+
+        }
+
+        private void btnComplaint_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ComplaintPage(users));
+
+        }
+
+        private void btnAddComplaint_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ComplaintAddEditPage(users));
+
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

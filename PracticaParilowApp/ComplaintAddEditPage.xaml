@@ -10,38 +10,21 @@
 
     <Grid  Background="Beige">
 
-        <Grid>
+   
             <TextBlock Text="Добавленеие/Редактирвоание обращения" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="0,0,0,50"/>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Background="AntiqueWhite">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"  Width="200">
-                    <TextBlock Margin="5,0,0,0">Фамилия:</TextBlock>
-                    <TextBox  x:Name="tBoxLastName"/>
-                    <TextBlock Margin="5,0,0,0">Имя:</TextBlock>
-                    <TextBox  x:Name="tBoxFirstName"/>
-                    <TextBlock Margin="5,0,0,0">Отчество:</TextBlock>
-                    <TextBox Margin="0,0,0,15" x:Name="tBoxPatronymic"/>
-
-                    <TextBlock Margin="5,0,0,0">Логин:</TextBlock>
-                    <TextBox x:Name="tBoxLogin"/>
-                    <TextBlock Margin="5,0,0,0">Пароль:</TextBlock>
-                    <TextBox Margin="0,0,0,15" x:Name="tBoxPassword"></TextBox>
-                    <Button  Margin="2"  x:Name="btnNext" Click="btnNext_Click" Background="GreenYellow">Завершить регистрацию</Button>
+                    <TextBlock Margin="5,0,0,0" >Номер заявки:</TextBlock>
+                <TextBox  x:Name="tBoxNumberComplation" IsEnabled="False"/>
+                    <TextBlock Margin="5,0,0,0">Пользователь оставивший заявку:</TextBlock>
+                    <ComboBox x:Name="cBoxClientLogin"/>
+                    <TextBlock Margin="5,0,0,0">Текст обращения:</TextBlock>
+                    <TextBox Margin="0,0,0,15" x:Name="tBoxMessage" Height="150" MaxLines="100"/>
+                    <Button  Margin="2"  x:Name="btnNext" Click="btnNext_Click" Background="GreenYellow">Сохранить</Button>
                     <Button Margin="2"  x:Name="btnBack" Click="btnBack_Click" Background="Goldenrod">Назад</Button>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="200">
-                    <TextBlock Margin="5,0,0,0">Номер телефона:</TextBlock>
-                    <TextBox  x:Name="tBoxPhoneNumber"/>
-                    <TextBlock Margin="5,0,0,0">Электронная почта:</TextBlock>
-                    <TextBox Margin="0,0,0,15" x:Name="tBoxEmail"/>
-                    <TextBlock Margin="5,0,0,0">Улица:</TextBlock>
-                    <ComboBox x:Name="cBoxAdress"/>
-                    <TextBlock Margin="5,0,0,0">Дом:</TextBlock>
-                    <TextBox x:Name="tBoxNumberAdress"/>
-                    <TextBlock Margin="5,0,0,0">Квартира:</TextBlock>
-                    <TextBox x:Name="tBoxNumberAportament"/>
                 </StackPanel>
 
             </StackPanel>
-        </Grid>
+      
     </Grid>
 </Page>

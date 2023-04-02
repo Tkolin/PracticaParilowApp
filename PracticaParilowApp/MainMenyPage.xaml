@@ -6,16 +6,16 @@
       xmlns:local="clr-namespace:PracticaParilowApp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainMenyPage">
+      Title="MainMenyPage" Loaded="Page_Loaded">
 
     <Grid Background="Beige">
-        <TextBlock Text="Список клиентов" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"  FontStyle="Italic"/>
+        <TextBlock Text="Меню" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"  FontStyle="Italic"/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Background="AntiqueWhite" Width="150">
-            <Button Margin="5" Content="Список заявок" x:Name="btnApplications" />
-            <Button Margin="5" Content="Список клиентов" x:Name="btnClients"/>
-            <Button Margin="5" Content="Список обращений" x:Name="btnComplaint"/>
-            <Button Margin="5,20,5,5" Content="Добавить обращение" x:Name="btnAddComplaint"/>
-            <Button Margin="5,20,5,5" Content="Назад" x:Name="btnBack" Background="Goldenrod"/>
+            <Button Margin="5" Content="Список заявок" x:Name="btnApplications" Click="btnApplications_Click"/>
+            <Button Margin="5" Content="Список клиентов" x:Name="btnClients" Click="btnClients_Click"/>
+            <Button Margin="5" Content="Список обращений" x:Name="btnComplaint" Click="btnComplaint_Click"/>
+            <Button Margin="5,20,5,5" Content="Добавить обращение" x:Name="btnAddComplaint" Click="btnAddComplaint_Click"/>
+            <Button Margin="5,20,5,5" Content="Назад" x:Name="btnBack" Background="Goldenrod" Click="btnBack_Click"/>
 
         </StackPanel>
     </Grid>

@@ -20,6 +20,7 @@ namespace PracticaParilowApp
     /// </summary>
     public partial class LoginPage : Page
     {
+        List<Users> users;
         public LoginPage()
         {
             InitializeComponent();
@@ -27,22 +28,40 @@ namespace PracticaParilowApp
 
         private void btnAddComplaint_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ComplaintAddEditPage());
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         private void btnAuth_Click(object sender, RoutedEventArgs e)
         {
-
+            if (loginSearch() != null)
+            {
+                NavigationService.Navigate(new MainMenyPage(loginSearch()));
+            }
+            else
+                MessageBox.Show("Ошибка входа");
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            users = ppDataBaseEntities.GetContext().Users.ToList();
+        }
+        private Users loginSearch()
+        {
+            foreach (Users checkUser in users)
+            {
+                if (checkUser.Login.ToLower() == TBoxLogin.Text.ToLower() &&
+                    checkUser.Password == TBoxPassword.Text)
+                {
+                    return checkUser;
+                }
 
+            }
+            return null;
         }
     }
 }

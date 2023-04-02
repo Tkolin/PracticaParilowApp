@@ -21,7 +21,7 @@
                 <Button  Margin="0,5,5,5" x:Name="btnReset" Click="btnReset_Click" Content="Отчистить" Background="Goldenrod" Width="70"/>
             </StackPanel>
 
-            <DataGrid  Height="300" x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid  Height="304" x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя" Binding="{Binding FilingDate}" Width="2.5*"/>
                     <DataGridTextColumn Header="Фамилия" Binding="{Binding TypsApplications.Name}" Width="3*"/>

@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,8 +64,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Adresses.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationPage.xaml.cs">
       <DependentUpon>ApplicationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
     </Compile>
     <Compile Include="ApplicationsAddEditPage.xaml.cs">
       <DependentUpon>ApplicationsAddEditPage.xaml</DependentUpon>
@@ -67,14 +82,53 @@
     <Compile Include="ClientPage.xaml.cs">
       <DependentUpon>ClientPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Clients.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
     <Compile Include="ComplaintAddEditPage.xaml.cs">
       <DependentUpon>ComplaintAddEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ComplaintPage.xaml.cs">
       <DependentUpon>ComplaintPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Complaints.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Executors.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelADONET.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelADONET.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelADONET.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelADONET.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelADONET.edmx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Statuses.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypsApplications.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>ModelADONET.tt</DependentUpon>
     </Compile>
     <Page Include="ApplicationPage.xaml">
       <SubType>Designer</SubType>
@@ -149,6 +203,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="ModelADONET.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelADONET.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelADONET.edmx.diagram">
+      <DependentUpon>ModelADONET.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -156,6 +218,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelADONET.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelADONET.Context.cs</LastGenOutput>
+      <DependentUpon>ModelADONET.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelADONET.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelADONET.edmx</DependentUpon>
+      <LastGenOutput>ModelADONET.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

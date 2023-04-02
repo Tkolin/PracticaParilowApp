@@ -23,13 +23,13 @@
 
             <DataGrid  Height="300" x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Номер" Binding="{Binding FilingDate}" Width="1*"/>
-                    <DataGridTextColumn Header="Дата" Binding="{Binding TypsApplications.Name}" Width="1.8*"/>
-                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Complaints.ID}" Width="2.5*"/>
-                    <DataGridTextColumn Header="Отчество" Binding="{Binding Complaints.ID}" Width="2.5*"/>
+                    <DataGridTextColumn Header="Номер" Binding="{Binding ID}" Width="1*"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="1.8*"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Clients.LastName}" Width="2.5*"/>
+                    <DataGridTextColumn Header="Отчество" Binding="{Binding Clients.Patronymic}" Width="2.5*"/>
 
-                    <DataGridTextColumn Header="Адресс клиента" Binding="{Binding Complaints.Date}" Width="2*"/>
-                    <DataGridTextColumn Header="Сообщение" Binding="{Binding Complaints.Date}" Width="5*"/>
+                    <DataGridTextColumn Header="Адресс клиента" Binding="{Binding Clients.Adresses.Name}" Width="2*"/>
+                    <DataGridTextColumn Header="Сообщение" Binding="{Binding Message}" Width="5*"/>
 
                 </DataGrid.Columns>
             </DataGrid>
@@ -37,7 +37,7 @@
 
                 <Button Margin="4" x:Name="btnDel" Click="btnDel_Click" Content="Удалить" Background="OrangeRed" Width="70"/>
                 <Button Margin="4" x:Name="btnAdd" Click="btnAdd_Click" Content="Добавить" Background="GreenYellow" Width="70"/>
-                <Button Margin="4" x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" Background="GreenYellow" Width="70"/>
+                <Button Margin="4" x:Name="btnEdit" Click="btnEdit_Click" Content="Изменить" Background="GreenYellow" Width="70" />
                 <Button Margin="4" x:Name="btnAddApplications" Click="btnAddApplications_Click" Content="Создать заявку" Background="Gold" Width="100"/>
 
             </StackPanel>

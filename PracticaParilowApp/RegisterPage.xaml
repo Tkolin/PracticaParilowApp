@@ -38,7 +38,7 @@
                 <TextBlock Margin="5,0,0,0">Квартира:</TextBlock>
                 <TextBox x:Name="tBoxNumberAportament"/>
             </StackPanel>
-           
+
         </StackPanel>
     </Grid>
 </Page>
